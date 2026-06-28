@@ -31,16 +31,23 @@ A static site archive of customconceptvans.com, scraped with HTTrack on 2026-06-
 ## Pages
 about, airliner-cabinetry, baja-cruiser, build-services, claim-jumper, claim-jumper-mtb, consultation, downloads, flarespace-installation, full-builds, gallery, heli-trailer, home-1, index, jobs, lightnin, mobile-tms-clinic, power-systems-gallery, solar-tax-credit, the-otter, the-shark-tank, tire-and-wheel-info, transit-crew-build, van-gogh, window-upgrade-process
 
+## Serving locally
+```bash
+cd /Users/josephpascucci/Sites/customconceptvans-archive/customconceptvans
+python3 -m http.server 8080
+```
+Then open http://localhost:8080 in a browser. The root `index.html` redirects into `customconceptvans.com/index.html` automatically.
+
 ## HTTrack scrape command
 ```bash
-cd ~/Desktop/ccv-site-final
-httrack "https://customconceptvans.com/" \
+cd /Users/josephpascucci/Sites/customconceptvans-archive
+httrack "https://customconceptvansllc.godaddysites.com/" \
   -O "./customconceptvans" \
-  "+customconceptvans.com/*.html" \
-  "+customconceptvans.com/the-shark-tank*" \
+  "+customconceptvansllc.godaddysites.com/*.html" \
+  "+customconceptvansllc.godaddysites.com/the-shark-tank*" \
   "+*.wsimg.com/*" \
-  "-customconceptvans.com/m/*" \
-  "-customconceptvans.com/store/*" \
+  "-customconceptvansllc.godaddysites.com/m/*" \
+  "-customconceptvansllc.godaddysites.com/store/*" \
   "-*/ols/*" "-*/cdn-cgi/*" "-*/cart/*" "-*/checkout/*" \
   "-*.facebook.com/*" "-*.instagram.com/*" "-*.youtube.com/*" \
   "-*.godaddy.com/*" "-*.fbcdn.net/*" "-*.cdninstagram.com/*" \
